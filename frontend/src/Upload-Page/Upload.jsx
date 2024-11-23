@@ -30,6 +30,8 @@ const Upload = () => {
       }
     } catch (error) {
       if (error.response) {
+        console.log(error.response)
+
         // Errors from the server (e.g., 4xx, 5xx status codes)
         toast(error.response.data.message || "Something went wrong!",{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
       } else if (error.request) {
