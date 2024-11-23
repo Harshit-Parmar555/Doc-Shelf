@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/api": "http://localhost:6060",
+      "/api": "https://doc-shelf.onrender.com",
     },
   },
   plugins: [react()],
