@@ -1,0 +1,87 @@
+.Document-Container {
+  height: 14%;
+  width: 90%;
+  min-height: 14%;
+  background-color: whitesmoke;
+  /* border-radius: 10px; */
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 2px solid black;
+}
+.Document-Container-Fileicon {
+  height: 50%;
+  width: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Document-Container-Fileicon > img {
+  height: 100%;
+  filter: invert(34%) sepia(82%) saturate(2641%) hue-rotate(203deg)
+    brightness(93%) contrast(92%);
+}
+.Document-Container-Name {
+  height: 50%;
+  width: 60%;
+  min-width: 60%;
+  font-family: "Poppins";
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: scroll;
+}
+.Document-Container-Option {
+  height: 60%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Document-Container-Option > a {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.Document-Container-Option > button {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: whitesmoke;
+}
+.Document-Container-Option > button > img {
+  height: 60%;
+  filter: invert(26%) sepia(77%) saturate(5147%) hue-rotate(0deg)
+    brightness(95%) contrast(95%);
+}
+.Document-Container-Option > a > img {
+  height: 60%;
+}
+
+@media only screen and (max-width: 600px) {
+  .Document-Container {
+    min-height: 10%;
+    height: 10%;
+  }
+  .Document-Container-Fileicon {
+    width: 10%;
+  }
+  .Document-Container-Fileicon > img {
+    height: 60%;
+  }
+  .Document-Container-Option {
+    width: 30%;
+  }
+  .Document-Container-Option > button {
+    height: 90%;
+  }
+  .Document-Container-Option > a {
+    height: 90%;
+  }
+}

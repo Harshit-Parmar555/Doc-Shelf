@@ -1,0 +1,83 @@
+@keyframes onload {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Login-Page-Container {
+  height: 84vh;
+  width: 100w;
+  display: flex;
+  animation: onload 0.8s;
+}
+.Login-Page-Container-Left {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Login-Page-Container-Left > h1 {
+  font-size: 120px;
+  font-family: "Poppins";
+  margin-left: 10%;
+}
+.Login-Page-Container-Left > h2 {
+  font-size: 60px;
+  font-family: "Pacifico";
+  margin-left: 10%;
+}
+.Login-Page-Container-Right {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Login-Page-Container-Right-Box {
+  height: 50%;
+  width: 50%;
+  background-color: #ae9ad7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.Login-Page-Container-Right-Box > form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Login-Page-Container-Right-Box > form > input {
+  height: 14%;
+  width: 85%;
+  margin-top: 10%;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+.Login-Page-Container-Right-Box > form > button {
+  height: 14%;
+  width: 85%;
+  margin-top: 10%;
+  border-radius: 8px;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .Login-Page-Container-Left {
+    display: none;
+  }
+  .Login-Page-Container-Right {
+    width: 100%;
+  }
+  .Login-Page-Container-Right-Box {
+    width: 80%;
+  }
+}

@@ -1,0 +1,46 @@
+@keyframes onload {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Dashboard-Page-Container {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: onload 0.8s;
+}
+.Dashboard-Page-Container-Box {
+  height: 90%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Dashboard-Page-Container-Box-Innerbox {
+  height: 93.5%;
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+.Dashboard-Page-Container-Box-Innerbox > h1 {
+  font-family: "Poppins";
+  margin-top: 5%;
+}
+
+@media only screen and (max-width: 600px) {
+  .Dashboard-Page-Container-Box {
+    width: 95%;
+  }
+  .Dashboard-Page-Container-Box-Innerbox > h1 {
+    font-size: 25px;
+  }
+}

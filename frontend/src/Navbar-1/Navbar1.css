@@ -1,0 +1,49 @@
+.Navbar1 {
+  height: 16vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Navbar1-Logo {
+  height: 80%;
+  width: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Navbar1-Logo > img {
+  height: 60%;
+}
+.Navbar1-Options {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Navbar1-Options > button {
+  height: 25%;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background-color: #7767f1;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .Navbar1-Logo {
+    width: 30%;
+  }
+  .Navbar1-Logo > img {
+    height: 40%;
+  }
+  .Navbar1-Options {
+    width: 50%;
+  }
+  .Navbar1-Options > button {
+    padding: 8%;
+  }
+}

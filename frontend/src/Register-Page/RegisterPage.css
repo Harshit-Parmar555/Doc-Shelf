@@ -1,0 +1,83 @@
+@keyframes onload {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.Register-Page-Container {
+  height: 84vh;
+  width: 100w;
+  display: flex;
+  animation: onload 0.8s;
+}
+.Register-Page-Container-Left {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Register-Page-Container-Left > h1 {
+  font-size: 120px;
+  font-family: "Poppins";
+  margin-left: 10%;
+}
+.Register-Page-Container-Left > h2 {
+  font-size: 60px;
+  font-family: "Pacifico";
+  margin-left: 10%;
+}
+.Register-Page-Container-Right {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Register-Page-Container-Right-Box {
+  height: 55%;
+  width: 50%;
+  background-color: #ae9ad7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.Register-Page-Container-Right-Box > form {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Register-Page-Container-Right-Box > form > input {
+  height: 15%;
+  width: 85%;
+  margin-top: 8%;
+  border-radius: 8px;
+  border: none;
+  text-align: center;
+}
+.Register-Page-Container-Right-Box > form > button {
+  height: 15%;
+  width: 85%;
+  margin-top: 8%;
+  border-radius: 8px;
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .Register-Page-Container-Left {
+    display: none;
+  }
+  .Register-Page-Container-Right {
+    width: 100%;
+  }
+  .Register-Page-Container-Right-Box {
+    width: 80%;
+  }
+}
