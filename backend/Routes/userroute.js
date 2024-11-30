@@ -3,7 +3,7 @@ const {
   registercontroller,
   logincontroller,
   logoutcontroller,
-  userdetails,
+  userdetails
 } = require("../Controllers/usercontroller");
 const userrouter = express.Router();
 const { testauth } = require("../Middlewares/auth");

@@ -1,18 +1,11 @@
-@keyframes onload {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .Dashboard-Page-Container {
-  height: 80vh;
+  height: 84vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: onload 0.8s;
+  background-color: black;
+  background: url("../assets/landingback.jpg");
 }
 .Dashboard-Page-Container-Box {
   height: 90%;
@@ -24,16 +17,18 @@
 .Dashboard-Page-Container-Box-Innerbox {
   height: 93.5%;
   width: 100%;
-  background-color: #d9d9d9;
+  background-color: black;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
+  border: 2px solid white;
 }
 .Dashboard-Page-Container-Box-Innerbox > h1 {
   font-family: "Poppins";
   margin-top: 5%;
+  color: white;
 }
 
 @media only screen and (max-width: 600px) {

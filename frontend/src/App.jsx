@@ -6,7 +6,6 @@ import Profile from "./Profile-Page/Profile";
 import Upload from "./Upload-Page/Upload";
 import Protected from "./Protected Route/Protected";
 import {BrowserRouter,Route,Routes} from "react-router-dom"
-import Navbar1 from "./Navbar-1/Navbar1";
 import {ToastContainer} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Upload.css";
 import Navbar2 from "../Navbar-2/Navbar2";
 import axios from "axios";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
 const Upload = () => {
   const [loading, setloading] = useState(false);
@@ -24,22 +24,37 @@ const Upload = () => {
 
       // If the request is successful
       if (backendResponse.data.success === true) {
-        toast(backendResponse.data.message,{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
+        toast(backendResponse.data.message, {
+          position: "bottom-right",
+          style: { backgroundColor: "black", color: "white" },
+        });
       } else {
-        toast("Unexpected response: " + backendResponse.data.message,{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
+        toast("Unexpected response: " + backendResponse.data.message, {
+          position: "bottom-right",
+          style: { backgroundColor: "black", color: "white" },
+        });
       }
     } catch (error) {
       if (error.response) {
-        console.log(error.response)
+        console.log(error.response);
 
         // Errors from the server (e.g., 4xx, 5xx status codes)
-        toast(error.response.data.message || "Something went wrong!",{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
+        toast(error.response.data.message || "Something went wrong!", {
+          position: "bottom-right",
+          style: { backgroundColor: "black", color: "white" },
+        });
       } else if (error.request) {
         // Errors related to no response from the server
-        toast("No response from the server. Please try again later.",{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
+        toast("No response from the server. Please try again later.", {
+          position: "bottom-right",
+          style: { backgroundColor: "black", color: "white" },
+        });
       } else {
         // Other errors
-        toast("An unexpected error occurred: " + error.message,{position:"bottom-right",style:{backgroundColor:"black",color:"white"}});
+        toast("An unexpected error occurred: " + error.message, {
+          position: "bottom-right",
+          style: { backgroundColor: "black", color: "white" },
+        });
       }
     } finally {
       setloading(false);
@@ -59,12 +74,16 @@ const Upload = () => {
               type="text"
               placeholder="Enter File Name"
             />
+            <label for="for-upload" htmlFor="for-upload" className="Upload-Button">Select File</label>
             <input
               onChange={(e) => {
                 setfile(e.target.files[0]);
               }}
               type="file"
-              accept="application/pdf"
+              id="for-upload"
+              accept="application/pdf,image/jpg,image/jpeg,image/png"
+              
+              style={{ color: "white" }}
             />
             {loading ? (
               <button style={{ opacity: "0.5" }} disabled>

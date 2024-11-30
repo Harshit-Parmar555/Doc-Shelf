@@ -3,10 +3,13 @@ import "./Document.css";
 import downloadicon from "../assets/download.svg";
 import deleteicon from "../assets/delete.svg";
 import fileicon from "../assets/fileicon.svg";
+import shareicon from "../assets/share.svg"
 import axios from "axios";
 import { toast } from "react-toastify";
+import {useNavigate} from "react-router-dom"
 
 const Document = (props) => {
+  const navigate = useNavigate();
   const [loading, setloading] = useState(false);
   const handledelete = async () => {
     try {
@@ -21,6 +24,7 @@ const Document = (props) => {
           position: "bottom-right",
           style: { backgroundColor: "black", color: "white" },
         });
+        location.reload();
       } else {
         toast("Unexpected response: " + backendResponse.data.message, {
           position: "bottom-right",

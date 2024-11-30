@@ -4,7 +4,7 @@ import Navbar2 from "../Navbar-2/Navbar2";
 import Document from "../Document-Component/Document";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import SwipeableTemporaryDrawer from "../Drawer Component/Drawer";
+import BasicMenu from "../Drawer Component/Drawer";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { authActions } from "../Redux Store/store";
@@ -88,7 +88,6 @@ const Dashboard = () => {
   return (
     <>
       <Navbar2 />
-      <SwipeableTemporaryDrawer />
       <div className="Dashboard-Page-Container">
         <div className="Dashboard-Page-Container-Box">
           <div className="Dashboard-Page-Container-Box-Innerbox">

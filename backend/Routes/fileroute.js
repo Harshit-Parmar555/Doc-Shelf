@@ -5,7 +5,7 @@ const { upload } = require("../Middlewares/multer");
 const {
   uploadfilecontroller,
   deletefilecontroller,
-  getallfiles,
+  getallfiles
 } = require("../Controllers/filecontroller");
 const { testauth } = require("../Middlewares/auth");
 
@@ -17,4 +17,6 @@ filerouter.post(
 );
 filerouter.delete("/deletefile/:id", testauth, deletefilecontroller);
 filerouter.get("/allfiles", testauth, getallfiles);
+
+
 module.exports = { filerouter };

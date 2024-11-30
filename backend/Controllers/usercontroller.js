@@ -2,6 +2,7 @@ const { usermodel } = require("../Model/usermodel");
 const bcrypt = require("bcrypt");
 
 const { generatetoken } = require("../Utils/tokengenerate");
+const { json } = require("express");
 
 exports.registercontroller = async (req, res) => {
   try {
@@ -99,25 +100,28 @@ exports.logoutcontroller = (req, res) => {
   }
 };
 
-exports.userdetails=async(req,res)=>{
-try {
-  const userid = req.user;
-  const user = await usermodel.findById(userid);
-  if(!user){
+exports.userdetails = async (req, res) => {
+  try {
+    const userid = req.user;
+    const user = await usermodel.findById(userid);
+    if (!user) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found",
+      });
+    }
+    return res.status(202).send({
+      success: true,
+      message: "User details fetched",
+      user,
+    });
+  } catch (error) {
     return res.status(404).send({
-      success : false,
-      message : "User not found"
-    })
+      success: false,
+      message: "Error in user detail controller",
+    });
   }
-  return res.status(202).send({
-    success : true,
-    message : "User details fetched",
-    user
-  })
-} catch (error) {
-  return res.status(404).send({
-    success : false,
-    message : "Error in user detail controller"
-  })
-}
-}
+};
+
+
+

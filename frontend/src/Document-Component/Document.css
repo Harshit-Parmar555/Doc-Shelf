@@ -1,14 +1,14 @@
 .Document-Container {
-  height: 14%;
+  height: 12%;
   width: 90%;
-  min-height: 14%;
+  min-height: 12%;
   background-color: whitesmoke;
   /* border-radius: 10px; */
   margin-top: 3%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid purple;
 }
 .Document-Container-Fileicon {
   height: 50%;
@@ -57,8 +57,6 @@
 }
 .Document-Container-Option > button > img {
   height: 60%;
-  filter: invert(26%) sepia(77%) saturate(5147%) hue-rotate(0deg)
-    brightness(95%) contrast(95%);
 }
 .Document-Container-Option > a > img {
   height: 60%;

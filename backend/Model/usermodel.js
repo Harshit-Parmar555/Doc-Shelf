@@ -18,7 +18,7 @@ const userschema = new mongoose.Schema({
       type: mongoose.Types.ObjectId,
       ref: "file",
     },
-  ],
+  ]
 });
 
 const usermodel = mongoose.model("user", userschema);

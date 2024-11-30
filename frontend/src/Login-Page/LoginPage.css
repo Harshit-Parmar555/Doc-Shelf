@@ -1,24 +1,20 @@
-@keyframes onload {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 .Login-Page-Container {
   height: 84vh;
   width: 100w;
   display: flex;
-  animation: onload 0.8s;
+ background-color: black;
+ background: url("../assets/landingback.jpg");
+ 
 }
 .Login-Page-Container-Left {
   width: 50%;
   height: 100%;
-
+color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 .Login-Page-Container-Left > h1 {
   font-size: 120px;
@@ -26,8 +22,8 @@
   margin-left: 10%;
 }
 .Login-Page-Container-Left > h2 {
-  font-size: 60px;
-  font-family: "Pacifico";
+  font-size: 50px;
+  font-family: "Poppins";
   margin-left: 10%;
 }
 .Login-Page-Container-Right {
@@ -41,11 +37,13 @@
 .Login-Page-Container-Right-Box {
   height: 50%;
   width: 50%;
-  background-color: #ae9ad7;
+  border: 2px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  background-color: black;
+
 }
 .Login-Page-Container-Right-Box > form {
   width: 100%;
@@ -68,8 +66,13 @@
   margin-top: 10%;
   border-radius: 8px;
   border: none;
+  transition: all 0.3s ease-in-out;
 }
-
+.Login-Page-Container-Right-Box>form>button:hover{
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+}
 @media only screen and (max-width: 600px) {
   .Login-Page-Container-Left {
     display: none;
@@ -79,5 +82,6 @@
   }
   .Login-Page-Container-Right-Box {
     width: 80%;
+    height:35%;
   }
 }

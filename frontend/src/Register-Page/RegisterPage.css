@@ -1,21 +1,16 @@
-@keyframes onload {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
+
 .Register-Page-Container {
   height: 84vh;
   width: 100w;
   display: flex;
-  animation: onload 0.8s;
+  background: url("../assets/landingback.jpg");
+  background-color: black;
 }
 .Register-Page-Container-Left {
   width: 50%;
   height: 100%;
-
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -26,8 +21,8 @@
   margin-left: 10%;
 }
 .Register-Page-Container-Left > h2 {
-  font-size: 60px;
-  font-family: "Pacifico";
+  font-size: 50px;
+  font-family: "Poppins";
   margin-left: 10%;
 }
 .Register-Page-Container-Right {
@@ -41,13 +36,16 @@
 .Register-Page-Container-Right-Box {
   height: 55%;
   width: 50%;
-  background-color: #ae9ad7;
+  border: 2px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  background-color: black;
 }
 .Register-Page-Container-Right-Box > form {
+  color: white;
+  font-family: "Poppins";
   height: 90%;
   width: 90%;
   display: flex;
@@ -68,6 +66,12 @@
   margin-top: 8%;
   border-radius: 8px;
   border: none;
+  transition: all 0.3s ease-in-out;
+}
+.Register-Page-Container-Right-Box>form>button:hover{
+   background-color: black;
+   border: 2px solid white;
+   color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -79,5 +83,8 @@
   }
   .Register-Page-Container-Right-Box {
     width: 80%;
+  }
+  .Register-Page-Container-Right-Box {
+    height: 40%;
   }
 }

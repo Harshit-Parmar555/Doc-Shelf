@@ -1,18 +1,13 @@
-@keyframes onload {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+
 .Profile-Page-Container {
   height: 84vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  animation: onload 0.8s;
+
+  background-color: black;
+  background: url("../assets/landingback.jpg");
 }
 .Profile-Page-Container-Left {
   height: 60%;
@@ -23,12 +18,15 @@
   justify-content: space-around;
   font-family: "Jersey 25";
   background-color: #d9d9d9;
+  font-size: 150%;
+
 }
 .Profile-Page-Container-Left-Profile {
   height: 35%;
   width: 30%;
   border-radius: 50%;
   background-color: black;
+
 }
 .Profile-Page-Container-Right {
   height: 80%;
@@ -37,6 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 150%;
   font-family: "Jersey 25";
   background-color: #d9d9d9;
 }
