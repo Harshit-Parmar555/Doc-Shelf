@@ -1,0 +1,36 @@
+.Sharefile-Page-Container{
+    height: 84vh;
+    width: 100vw;
+    background-color: #f2e9e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Sharefile-Page-Container>form{
+    height: 30%;
+    width: 30%;
+    background-color: #0d1321;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+.Sharefile-Page-Container>form>input{
+    height: 20%;
+    width: 70%;
+    text-align: center;
+    border-radius: 10px;
+}
+.Sharefile-Page-Container>form>button{
+    padding: 3%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-family: "Poppins";
+}
+
+@media only screen and (max-width: 600px) {
+   .Sharefile-Page-Container>form{
+    width: 90%;
+   }
+  }

@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar1 from "../Navbar-1/Navbar1";
 import "./LandingPage.css";
-import landing from "../assets/landingback.jpg";
 import { useNavigate } from "react-router-dom";
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -11,6 +10,7 @@ const LandingPage = () => {
       <div className="Landing-Page-Container">
         <div className="Landing-Page-Container-Center">
           <h1>STORE YOUR DOCS SAFELY</h1>
+          <p>Doc Shelf is a web app designed for storing, organizing, and securely sharing documents, making collaboration seamless and efficient. Its user-friendly interface ensures easy access to files anytime, anywhere.</p>
           <button
             onClick={() => {
               navigate("/register");

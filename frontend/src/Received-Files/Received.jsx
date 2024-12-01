@@ -1,29 +1,22 @@
-import React, { useEffect, useState } from "react";
-import "./Profile.css";
+import React, { useState, useEffect } from "react";
+import "./Received.css";
 import Navbar2 from "../Navbar-2/Navbar2";
-import axios from "axios";
+import ReceivedDoc from "../Received Document/ReceivedDoc";
 import { toast } from "react-toastify";
-
-const Profile = () => {
-  const [userdetails, setuserdetails] = useState(null);
-  const [load, setload] = useState(false);
-  const userdetail = async () => {
+import axios from "axios";
+const Received = () => {
+  const [files, setfiles] = useState([]);
+  const fetchfile = async () => {
     try {
-      const backendResponse = await axios.get("/api/v1/user/details", {
+      const backendResponse = await axios.get("/api/v1/file/getsharefile", {
         withCredentials: true,
       });
 
       // If the request is successful
       if (backendResponse.data.success === true) {
-        console.log(backendResponse.data.user.profilepicture);
-        setuserdetails({
-          name: backendResponse.data.user.username,
-          email: backendResponse.data.user.email,
-          profilepic: backendResponse.data.user.profilepicture,
-          files: backendResponse.data.user.files.length,
-        });
-        setload(true);
+        setfiles(backendResponse.data.sharedfiles);
       } else {
+        dispatch(authActions.logout());
         toast("Unexpected response: " + backendResponse.data.message, {
           position: "bottom-right",
           style: { backgroundColor: "black", color: "white" },
@@ -51,25 +44,27 @@ const Profile = () => {
       }
     }
   };
+
   useEffect(() => {
-    userdetail();
+    fetchfile();
   }, []);
+
   return (
     <>
       <Navbar2 />
-      <div className="Profile-Page-Container">
-        <div className="Profile-Page-Container-Left">
-          <div className="Profile-Page-Container-Left-Profile">
-            {load ? <img src={userdetails.profilepic} alt="" /> : ""}
-          </div>
-          {load ? (
-            <>
-              <h3>Username : {userdetails.name}</h3>
-              <h3>Email : {userdetails.email}</h3>
-              <h3>Document Stored : {userdetails.files}</h3>
-            </>
+      <div className="Received-Page-Container">
+        <div className="Received-Page-Container-Box">
+          {files.length > 0 ? (
+            files.map((file, index) => (
+              <ReceivedDoc
+                key={index}
+                filename={file.filename}
+                filepath={file.filepath}
+                sender={file.sender}
+              />
+            ))
           ) : (
-            " "
+            <p style={{ color: "white" }}>No files found.</p>
           )}
         </div>
       </div>
@@ -77,4 +72,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Received;

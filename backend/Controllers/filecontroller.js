@@ -1,6 +1,7 @@
 const fs = require("fs");
 const { filemodel } = require("../Model/filemodel");
 const { usermodel } = require("../Model/usermodel");
+const { sharefilemodel } = require("../Model/sharefile");
 const mongoose = require("mongoose");
 
 const {
@@ -23,7 +24,7 @@ exports.uploadfilecontroller = async (req, res) => {
       });
     }
     const storage = getStorage(app);
-    const storageref = ref(storage, "files/" + file.filename);
+    const storageref = ref(storage, "Doc-Shlelf-Files/" + file.filename);
     const filebuffer = fs.readFileSync(file.path);
     await uploadBytes(storageref, filebuffer, { contentType: file.mimetype });
     const url = await getDownloadURL(storageref);
@@ -94,6 +95,7 @@ exports.getallfiles = async (req, res) => {
       userfiles,
     });
   } catch (error) {
+    console.log(error);
     return res.status(404).send({
       success: false,
       message: "Error in get files controller",
@@ -101,3 +103,89 @@ exports.getallfiles = async (req, res) => {
   }
 };
 
+// share file
+
+exports.sharefile = async (req, res) => {
+  try {
+    const { email, filename, filepath } = req.body;
+    if (!email || !filename || !filepath) {
+      return res.status(404).send({
+        success: false,
+        message: "Please fill all the fields",
+      });
+    }
+    const senderid = req.user;
+    const sender = await usermodel.findById(senderid);
+    const senderemail = sender.email;
+    if (senderemail === email) {
+      return res.status(404).send({
+        success: false,
+        message: "Please Enter Others email",
+      });
+    }
+    if (!sender) {
+      return res.status(404).send({
+        success: false,
+        message: "Something went wrong",
+      });
+    }
+    const receiver = await usermodel.findOne({
+      email,
+    });
+    if (!receiver) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    const newfileshare = new sharefilemodel({
+      filename: filename,
+      filepath: filepath,
+      sender: senderemail,
+    });
+    newfileshare.save();
+    receiver.sharefile.push(newfileshare);
+    await receiver.save();
+    return res.status(202).send({
+      success: true,
+      message: "File shared successfully",
+    });
+  } catch (error) {
+    return res.status(404).send({
+      success: false,
+      message: "Error in share file controller",
+    });
+  }
+};
+
+exports.getallsharefile = async (req, res) => {
+  try {
+    const userid = req.user;
+    if (!userid) {
+      return res.status(404).send({
+        success: false,
+        message: "something went wrong",
+      });
+    }
+    const userobject = await usermodel.findById(userid).populate("sharefile");
+    if (!userobject) {
+      return res.status(404).send({
+        success: false,
+        message: "User not found",
+      });
+    }
+    const sharedfiles = userobject.sharefile;
+    return res.status(202).send({
+      success: true,
+      message: "Shared file fetched",
+      sharedfiles,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(404).send({
+      success: false,
+      message: "Error in get all share file controller",
+    });
+  }
+};

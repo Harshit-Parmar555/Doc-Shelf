@@ -1,5 +1,5 @@
-.Document-Container {
-  height: 12%;
+.Received-Document-Container {
+  height: 16%;
   width: 90%;
   min-height: 12%;
   background-color: whitesmoke;
@@ -7,25 +7,25 @@
   margin-top: 3%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-bottom: 2px solid purple;
 }
-.Document-Container-Fileicon {
+.Received-Document-Container-Fileicon {
   height: 50%;
-  width: 5%;
+  width: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.Document-Container-Fileicon > img {
+.Received-Document-Container-Fileicon > img {
   height: 100%;
   filter: invert(34%) sepia(82%) saturate(2641%) hue-rotate(203deg)
     brightness(93%) contrast(92%);
 }
-.Document-Container-Name {
+.Received-Document-Container-Name {
   height: 50%;
-  width: 60%;
-  min-width: 60%;
+  width: 20%;
+  min-width: 40%;
   font-family: "Poppins";
   font-size: 15px;
   display: flex;
@@ -33,20 +33,20 @@
   justify-content: center;
   overflow-x: scroll;
 }
-.Document-Container-Option {
+.Received-Document-Container-Option {
   height: 60%;
   width: 20%;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.Document-Container-Option > a {
+.Received-Document-Container-Option > a {
   height: 100%;
   width: 20%;
   display: flex;
   align-items: center;
 }
-.Document-Container-Option > button {
+.Received-Document-Container-Option > button {
   height: 100%;
   width: 20%;
   display: flex;
@@ -55,36 +55,29 @@
   border: none;
   background-color: whitesmoke;
 }
-.Document-Container-Option > button > img {
+.Received-Document-Container-Option > button > img {
   height: 60%;
 }
-.Document-Container-Option > a > img {
+.Received-Document-Container-Option > a > img {
   height: 60%;
 }
 
 @media only screen and (max-width: 600px) {
-  .Document-Container {
-    min-height: 10%;
-    height: 10%;
+  .Received-Document-Container{
+    justify-content: space-between;
   }
-  .Document-Container-Fileicon {
+  .Received-Document-Container-Fileicon{
+    height: 30%;
     width: 10%;
   }
-  .Document-Container-Fileicon > img {
-    height: 60%;
+  .Received-Document-Container-Name{
+    height: 100%;
+    width: 85%;
+
+
   }
-  .Document-Container-Name{
-    width: 30%;
-    min-width: 30%;
-  }
-  .Document-Container-Option {
-    width: 30%;
-    min-width: 40%;
-  }
-  .Document-Container-Option > button {
-    height: 90%;
-  }
-  .Document-Container-Option > a {
-    height: 90%;
-  }
+ .Received-Document-Container-Option>a{
+  width: 40%;
+ }
+
 }

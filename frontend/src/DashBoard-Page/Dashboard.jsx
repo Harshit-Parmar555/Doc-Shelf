@@ -102,7 +102,7 @@ const Dashboard = () => {
                 />
               ))
             ) : (
-              <p>No files found.</p>
+              <p style={{color:"white"}}>No files found.</p>
             )}
           </div>
         </div>

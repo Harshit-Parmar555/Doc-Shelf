@@ -30,10 +30,10 @@ connect();
 app.use("/api/v1/user", userrouter);
 app.use("/api/v1/file", filerouter);
 
-app.use(express.static(path.join(_dirname,"/frontend/dist")));
-app.get("*",(req,res)=>{
-  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"))
-})
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(PORT, (req, res) => {
   console.log(`Example port running on port ${PORT}`);

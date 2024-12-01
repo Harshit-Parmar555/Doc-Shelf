@@ -76,6 +76,7 @@ const LoginPage = () => {
         <div className="Login-Page-Container-Left">
           <h2>Welcome Back to</h2>
           <h1>Doc-Shelf</h1>
+          <p>Welcome back to Doc Shelf! Log in to access your secure document library and stay connected to your files anytime, anywhere. Let’s continue where you left off!</p>
         </div>
         <div className="Login-Page-Container-Right">
           <div className="Login-Page-Container-Right-Box">

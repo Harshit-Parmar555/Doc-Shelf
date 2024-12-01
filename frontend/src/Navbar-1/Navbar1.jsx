@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar1.css";
-import Logo from "../assets/DOCS-SHELF.png";
+import LOGO from "../assets/Doc-Shelf.png"
 import { useNavigate } from "react-router-dom";
 
 const Navbar1 = () => {
@@ -9,7 +9,7 @@ const Navbar1 = () => {
     <>
       <nav className="Navbar1">
         <div className="Navbar1-Logo">
-          <img  src={Logo} alt="" />
+          <img  src={LOGO} alt="" />
         </div>
         <div className="Navbar1-Options">
           <button

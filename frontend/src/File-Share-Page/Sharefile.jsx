@@ -1,21 +1,24 @@
 import React, { useState } from "react";
-import "./Document.css";
-import downloadicon from "../assets/download.svg";
-import deleteicon from "../assets/delete.svg";
-import fileicon from "../assets/fileicon.svg";
-import shareicon from "../assets/share.svg"
+import "./Sharefile.css";
+import Navbar2 from "../Navbar-2/Navbar2";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
-import {useNavigate} from "react-router-dom"
-
-const Document = (props) => {
-  const navigate = useNavigate();
+const Sharefile = () => {
   const [loading, setloading] = useState(false);
-  const handledelete = async () => {
+  const location = useLocation();
+  const props = location.state;
+  const [email, setemail] = useState("");
+  const handlesubmit = async (e) => {
+    e.preventDefault();
     try {
-      setloading(true);
-      const backendResponse = await axios.delete(
-        `/api/v1/file/deletefile/${props.id}`
+      setloading(true)
+      const backendResponse = await axios.post(
+        "/api/v1/file/sharefile",
+        { email: email, filename: props.filename, filepath: props.filepath },
+        {
+          withCredentials: true,
+        }
       );
 
       // If the request is successful
@@ -24,8 +27,8 @@ const Document = (props) => {
           position: "bottom-right",
           style: { backgroundColor: "black", color: "white" },
         });
-        location.reload();
       } else {
+        dispatch(authActions.logout());
         toast("Unexpected response: " + backendResponse.data.message, {
           position: "bottom-right",
           style: { backgroundColor: "black", color: "white" },
@@ -51,40 +54,28 @@ const Document = (props) => {
           style: { backgroundColor: "black", color: "white" },
         });
       }
-    } finally {
+    }finally{
       setloading(false);
     }
   };
   return (
     <>
-      <div className="Document-Container">
-        <div className="Document-Container-Fileicon">
-          <img src={fileicon} alt="" />
-        </div>
-        <div className="Document-Container-Name">
-          <h4>{props.filename}</h4>
-        </div>
-        <div className="Document-Container-Option">
-          <a href={props.filepath} target="_blank">
-            <img src={downloadicon} alt="" />
-          </a>
-          {loading ? (
-            <>
-              {" "}
-              <button>
-                <img src={deleteicon} style={{ opacity: "0.5" }} />
-              </button>
-            </>
-          ) : (
-            <button>
-              <img onClick={handledelete} src={deleteicon} alt="" />
-            </button>
-          )}
-          <button onClick={()=>navigate(`/sharefile/${props.id}`,{ state: { ...props } })}><img src={shareicon} alt="" /></button>
-        </div>
+      <Navbar2 />
+      <div className="Sharefile-Page-Container">
+        <form onSubmit={handlesubmit}>
+          <input
+            onChange={(e) => setemail(e.target.value)}
+            type="email"
+            required
+            placeholder="Enter user email to send file"
+          />
+          {loading? <button disabled>Sharing . . . </button>:<button type="submit">share</button>}
+          
+         
+        </form>
       </div>
     </>
   );
 };
 
-export default Document;
+export default Sharefile;

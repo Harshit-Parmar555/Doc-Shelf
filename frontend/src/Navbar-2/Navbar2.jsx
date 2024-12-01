@@ -1,17 +1,25 @@
 import React from "react";
 import "./Navbar2.css";
-import Logo from "../assets/DOCS-SHELF.png";
+import LOGO from "../assets/Doc-Shelf.png";
 import BasicMenu from "../Drawer Component/Drawer";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Navbar2 = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="Navbar1">
-        <div  className="Navbar1-Logo">
-          <img onClick={()=>{navigate("/dashboard")}} src={Logo} alt="" />
+      <nav className="Navbar2">
+        <div className="Navbar2-Logo">
+          <img
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+            src={LOGO}
+            alt=""
+          />
         </div>
-        <div className="Navbar2-Option"><BasicMenu/></div>
+        <div className="Navbar2-Option">
+          <BasicMenu />
+        </div>
       </nav>
     </>
   );

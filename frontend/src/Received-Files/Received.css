@@ -1,0 +1,23 @@
+.Received-Page-Container{
+    height: 84vh;
+    width: 100vw;
+    background-color: #f2e9e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Received-Page-Container-Box{
+    height: 70%;
+    width: 70%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+   .Received-Page-Container-Box{
+    width: 90%;
+   }
+  }

@@ -4,8 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
-  background: url("../assets/landingback.jpg");
+  background-color: #f2e9e4;
 }
 .Dashboard-Page-Container-Box {
   height: 90%;

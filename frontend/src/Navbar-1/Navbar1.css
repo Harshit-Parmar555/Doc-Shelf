@@ -4,14 +4,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: url("../assets/landingback.jpg");
+  background-color: #f2e9e4;
 }
 .Navbar1-Logo {
   height: 80%;
-  width: 17%;
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.Navbar1-Logo > imG {
+  width: 70%;
 }
 .Navbar1-Options {
   height: 100%;
@@ -28,22 +31,22 @@
   justify-content: center;
   border-radius: 6px;
   border: none;
-  background-color: rgb(57, 5, 57);
+  background-color: #22223b;
   color: white;
-  transition: all 0.3ss ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .Navbar1-Options > button:hover {
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: #0d1321;
   color: white;
+  padding: 6%;
 }
 @media only screen and (max-width: 600px) {
   .Navbar1-Logo {
-    height: 40%;
-    width: 40%;
+    height: 35%;
+    width: 35%;
   }
   .Navbar1-Logo > img {
-    width: 100%;
+    width: 90%;
   }
   .Navbar1-Options {
     width: 50%;

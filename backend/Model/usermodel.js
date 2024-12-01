@@ -13,12 +13,22 @@ const userschema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  profilepicture: {
+    type: String,
+    required: true,
+  },
   files: [
     {
       type: mongoose.Types.ObjectId,
       ref: "file",
     },
-  ]
+  ],
+  sharefile: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "sharefile",
+    },
+  ],
 });
 
 const usermodel = mongoose.model("user", userschema);

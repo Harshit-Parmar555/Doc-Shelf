@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./Drawer.css";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -73,7 +74,7 @@ export default function BasicMenu() {
         onClick={handleClick}
         disableRipple
       >
-        <img src={menuicon} alt="" style={{ filter: "invert(1)" }} />
+        <img src={menuicon} alt="" />
       </Button>
       <Menu
         id="basic-menu"
@@ -85,22 +86,18 @@ export default function BasicMenu() {
         }}
         sx={{
           "& .MuiPaper-root": {
-            width: "220px",
-            height: "250px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-between",
+            backgroundColor: "transparent",
+            boxShadow: "none",
           },
         }}
       >
-        <div style={{ height: "200px" }}>
+        <div className="MenuItem-Container">
           <MenuItem
             sx={{
               fontSize: "20px",
               fontFamily: "Poppins",
               textAlign: "center",
-              height: "35%",
+              height: "27%",
               "&:hover": { backgroundColor: "transparent" },
             }}
             disableRipple
@@ -113,7 +110,7 @@ export default function BasicMenu() {
           <MenuItem
             sx={{
               textAlign: "center",
-              height: "35%",
+              height: "27%",
               fontSize: "20px",
               "&:hover": { backgroundColor: "transparent" },
             }}
@@ -124,11 +121,27 @@ export default function BasicMenu() {
           >
             Upload File
           </MenuItem>
+
+          <MenuItem
+            sx={{
+              textAlign: "center",
+              height: "27%",
+              fontSize: "20px",
+              "&:hover": { backgroundColor: "transparent" },
+            }}
+            disableRipple
+            onClick={() => {
+              navigate("/receivedfiles");
+            }}
+          >
+            Received file
+          </MenuItem>
+
           <MenuItem
             sx={{
               color: "red",
               textAlign: "center",
-              height: "35%",
+              height: "27%",
               fontSize: "20px",
               "&:hover": { backgroundColor: "transparent" },
             }}

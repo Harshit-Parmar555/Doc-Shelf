@@ -1,44 +1,37 @@
-
 .Profile-Page-Container {
   height: 84vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
-
-  background-color: black;
-  background: url("../assets/landingback.jpg");
+  background-color: #f2e9e4;
 }
 .Profile-Page-Container-Left {
-  height: 60%;
+  height: 90%;
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   font-family: "Jersey 25";
-  background-color: #d9d9d9;
-  font-size: 150%;
-
+  background-color: #1d2d44;
+  font-size: 2vh;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Poppins';
 }
 .Profile-Page-Container-Left-Profile {
-  height: 35%;
-  width: 30%;
+  height: 150px;
+  width: 150px;
+  min-height: 28%;
+  min-width: 30%;
   border-radius: 50%;
-  background-color: black;
+}
+.Profile-Page-Container-Left-Profile>img{
+  height: 100%;
+  width: 100%;
+}
 
-}
-.Profile-Page-Container-Right {
-  height: 80%;
-  width: 30%;
-  background-color: blue;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 150%;
-  font-family: "Jersey 25";
-  background-color: #d9d9d9;
-}
 
 @media only screen and (max-width: 600px) {
   .Profile-Page-Container {
@@ -47,7 +40,8 @@
   }
   .Profile-Page-Container-Left {
     width: 90%;
-    height: 40vh;
+    height: 50vh;
+    font-size: 1.4vh;
   }
   .Profile-Page-Container-Right {
     width: 90%;

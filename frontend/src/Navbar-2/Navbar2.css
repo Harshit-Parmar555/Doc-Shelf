@@ -1,0 +1,57 @@
+.Navbar2 {
+  height: 16vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f2e9e4;
+}
+.Navbar2-Logo {
+  height: 80%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Navbar2-Logo > imG {
+  width: 70%;
+}
+.Navbar2-Options {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.Navbar2-Options > button {
+  height: 25%;
+  padding: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background-color: #22223b;
+  color: white;
+  transition: all 0.4s ease-in-out;
+}
+.Navbar2-Options > button:hover {
+  background-color: #0d1321;
+  color: white;
+  padding: 6%;
+}
+@media only screen and (max-width: 600px) {
+  .Navbar2-Logo {
+    height: 35%;
+    width: 35%;
+  }
+  .Navbar2-Logo > img {
+    width: 90%;
+  }
+  .Navbar2-Options {
+    width: 50%;
+  }
+  .Navbar2-Options > button {
+    padding: 8%;
+  }
+}

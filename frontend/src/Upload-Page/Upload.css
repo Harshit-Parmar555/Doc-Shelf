@@ -1,19 +1,16 @@
 
 .Upload-Page-Container {
-  background-color: black;
+  background-color: #f2e9e4;
   height: 84vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
- 
-  background: url("../assets/landingback.jpg");
 }
 .Upload-Page-Container-Box {
   height: 45%;
   width: 30%;
-  background-color: transparent;
-  border: 2px solid white;
+  background-color: black;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -43,7 +40,8 @@
   padding: 4%;
   border-radius: 10px;
   border: none;
-  background-color: rgb(59, 2, 59);
+  background-color: #0d1321;
+  border: 2px solid white;
   color: white;
 }
 .Upload-Button{

@@ -1,8 +1,16 @@
 const { usermodel } = require("../Model/usermodel");
 const bcrypt = require("bcrypt");
-
 const { generatetoken } = require("../Utils/tokengenerate");
-const { json } = require("express");
+const { upload } = require("../Middlewares/multer");
+const fs = require("fs");
+
+const {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL,
+} = require("firebase/storage");
+const { app } = require("../Utils/firebaseconfig");
 
 exports.registercontroller = async (req, res) => {
   try {
@@ -20,11 +28,25 @@ exports.registercontroller = async (req, res) => {
         message: "user already exist",
       });
     }
+    const file = req.file;
+    if (!file) {
+      return res.status(404).send({
+        success: false,
+        message: "Error in File Uploading",
+      });
+    }
+    const storage = getStorage(app);
+    const storageref = ref(storage, "Docshelf-ProfilePictures/" + file.filename);
+    const filebuffer = fs.readFileSync(file.path);
+    await uploadBytes(storageref, filebuffer, { contentType: file.mimetype });
+    const url = await getDownloadURL(storageref);
+    fs.unlinkSync(file.path);
     const hashedpassword = await bcrypt.hash(password, 10);
     const newuser = new usermodel({
       username,
       email,
       password: hashedpassword,
+      profilepicture: url,
     });
     await newuser.save();
     return res.status(202).send({
@@ -33,6 +55,7 @@ exports.registercontroller = async (req, res) => {
       newuser,
     });
   } catch (error) {
+    console.log(error);
     return res.status(404).send({
       success: false,
       message: "Error in user register controller",
@@ -122,6 +145,3 @@ exports.userdetails = async (req, res) => {
     });
   }
 };
-
-
-
