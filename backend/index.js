@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cookieparser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://doc-shelf.onrender.com",
     credentials: true,
   })
 );
