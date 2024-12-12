@@ -5,7 +5,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   server:{
     proxy:{
-      '/api' :"http://localhost:6060"
+      '/api' :"https://doc-shelf.onrender.com"
     },
   },
   plugins: [react()],
