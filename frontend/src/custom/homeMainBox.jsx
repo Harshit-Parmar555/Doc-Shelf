@@ -44,7 +44,9 @@ const MainBox = () => {
               />
             ))
           ) : (
-            <p className="font-kanit text-3xl text-white">No Document Found.</p>
+            <p className="font-kanit text-xl text-white mt-6">
+              No Document Found.
+            </p>
           )}
         </div>
       </div>
