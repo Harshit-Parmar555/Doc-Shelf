@@ -22,7 +22,7 @@ const MainBox = () => {
     <div
       className={`h-[100%] w-[96%]  ${
         theme ? "bg-white" : "bg-black"
-      } flex items-center justify-center`}
+      } flex items-center justify-center transition-colors ease-in-out duration-500`}
     >
       <div className="h-[90%] w-[90%] flex flex-col items-center">
         <div>

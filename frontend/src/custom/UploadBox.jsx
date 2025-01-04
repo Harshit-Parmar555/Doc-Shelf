@@ -18,7 +18,7 @@ import { useThemeStore } from "@/store/useThemeStore";
 const UploadBox = () => {
   const { theme } = useThemeStore();
   const { upload, uploading } = useFileStore();
-  
+
   const {
     register,
     handleSubmit,
@@ -37,7 +37,11 @@ const UploadBox = () => {
         theme ? "bg-white" : "bg-black"
       } flex items-center justify-center transition-colors duration-500 ease-in-out`}
     >
-      <Card className={`w-[320px] md:w-[350px] ${theme ? "bg-gray-300" : ""}`}>
+      <Card
+        className={`w-[320px] md:w-[350px] ${
+          theme ? "bg-gray-300" : ""
+        } transition-colors ease-in-out duration-500`}
+      >
         <CardHeader>
           <CardTitle>Upload Document</CardTitle>
           <CardDescription>Upload Your Document In One Click.</CardDescription>
