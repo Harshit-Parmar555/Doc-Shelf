@@ -9,7 +9,7 @@ const SideBar = () => {
   const { logout } = useAuthStore();
   return (
     <div
-      className={`h-[100%] w-[14%] md:w-[10%] lg:w-[4%] ${
+      className={`h-[100%] w-[14%] min-w-[14%] md:w-[10%] lg:w-[4%] ${
         theme ? "bg-white" : "bg-black"
       } flex flex-col items-center border-r-[1px] border-gray-500 transition-colors duration-500 ease-in-out`}
     >

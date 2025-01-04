@@ -20,16 +20,16 @@ const MainBox = () => {
 
   return (
     <div
-      className={`h-[100%] w-[96%]  ${
+      className={`h-[100%] w-[96%] max-w-[96%]  ${
         theme ? "bg-white" : "bg-black"
-      } flex items-center justify-center transition-colors ease-in-out duration-500`}
+      } flex items-center justify-center transition-colors ease-in-out dur`}
     >
       <div className="h-[90%] w-[90%] flex flex-col items-center">
         <div>
           <h1 className="font-kanit text-4xl text-white">MY SHELF</h1>
         </div>
         <div
-          className={`min-h-[90%] w-[98%] md:w-[94%] lg:w-[90%] ${
+          className={`min-h-[90%] w-[98%] max-w-[98%] md:w-[94%] lg:w-[90%] ${
             theme ? "bg-gray-300" : "bg-back"
           } rounded-md mt-6 flex flex-col items-center overflow-y-scroll transition-colors duration-500 ease-in-out`}
         >
