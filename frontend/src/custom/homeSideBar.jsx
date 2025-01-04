@@ -9,21 +9,21 @@ const SideBar = () => {
   const { logout } = useAuthStore();
   return (
     <div
-      className={`h-[100%] w-[14%] min-w-[14%] md:w-[10%] lg:w-[4%] ${
+      className={`h-[12%] w-full md:h-[8%] ${
         theme ? "bg-white" : "bg-black"
-      } flex flex-col items-center border-r-[1px] border-gray-500 transition-colors duration-500 ease-in-out`}
+      } flex items-center justify-evenly border-b-[1px] border-gray-800 transition-colors duration-500 ease-in-out`}
     >
       <Home
         onClick={() => toggleComponent("home")}
-        className={`mt-16 ${theme ? "" : "invert"} cursor-pointer`}
+        className={` ${theme ? "" : "invert"} cursor-pointer`}
       />
       <Upload
         onClick={() => toggleComponent("upload")}
-        className={`mt-16 ${theme ? "" : "invert"} cursor-pointer`}
+        className={` ${theme ? "" : "invert"} cursor-pointer`}
       />
       <LogOut
         onClick={() => logout()}
-        className="text-red-600 mt-16 cursor-pointer"
+        className="text-red-600  cursor-pointer"
       />
     </div>
   );

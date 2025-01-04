@@ -38,11 +38,11 @@ const ProfileBox = () => {
   };
   return (
     <div
-      className={`h-[100%] w-[96%] flex items-center justify-center ${
+      className={`h-full w-full flex items-center justify-center ${
         theme ? "bg-white" : "bg-black"
       } transition-colors duration-500 ease-in-out`}
     >
-      <Card className="w-[320px] md:w-[500px] bg-back border-none">
+      <Card className="w-[350px] md:w-[500px] bg-back border-none">
         <CardHeader className="">
           <div className="flex items-center justify-between text-white">
             <div>
@@ -61,7 +61,7 @@ const ProfileBox = () => {
         <CardContent className="text-center text-white">
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="flex items-center justify-evenly"
+            className="flex items-center justify-evenly mt-8"
           >
             <Input
               required
@@ -76,11 +76,11 @@ const ProfileBox = () => {
             )}
           </form>
 
-          <h1 className="mt-6 font-poppins font-base">
+          <h1 className="font-poppins font-base mt-4">
             Joined Doc-Shlef : {joinedat}
           </h1>
         </CardContent>
-        <CardFooter className="flex items-center justify-center">
+        <CardFooter className="flex items-center justify-center mt-4">
           <Button
             onClick={() => logout()}
             className="bg-red-600 text-white p-4 mt-4 hover:bg-red-600"

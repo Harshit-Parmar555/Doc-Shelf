@@ -12,7 +12,7 @@ const File = (props) => {
   const newdate = formatMongoDate(props.date);
   const { deletefile } = useFileStore();
   return (
-    <div className="min-h-[55px] w-[90%] max-w-[90%] bg-fileback mt-10 border-b-[0.8px] border-gray-400 flex items-center justify-between">
+    <div className="min-h-[55px] w-[90%] md:w-[70%] bg-fileback mt-10 border-b-[0.8px] border-gray-400 flex items-center justify-between">
       <FileIcon className="ml-2" />
       <div className="flex-1 ml-4 overflow-hidden">
         <h1 className="text-sm w-full overflow-hidden text-ellipsis whitespace-nowrap">
@@ -21,7 +21,7 @@ const File = (props) => {
         <p className="text-xs text-gray-500">{newdate}</p>
       </div>
 
-      <div className="flex items-center w-auto">
+      <div className="flex items-center w-auto ml-2">
         <a className="mr-5 md:mr-16" href={props.url} target="_blank">
           <Download />
         </a>
