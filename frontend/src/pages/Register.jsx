@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { toast } from "react-hot-toast";
 
 // Store Import
 import { useAuthStore } from "@/store/useAuthStore";
@@ -50,16 +51,48 @@ const Register = () => {
                   onSubmit={handleSubmit(onSubmit)}
                 >
                   <Label className="mt-2">Enter Your Username</Label>
-                  <Input className="mt-2" {...register("username")} required />
+                  <Input
+                    className="mt-2"
+                    {...register("username", {
+                      required: "Username is required",
+                      minLength: { value: 6, message: "Username is too short" },
+                      maxLength: {
+                        value: 20,
+                        message: "Username is too long.",
+                      },
+                    })}
+                    required
+                  />
+                  {errors.username && toast.error(errors.username.message)}
                   <Label className="mt-2">Enter Your Email</Label>
                   <Input
                     className="mt-2"
-                    {...register("email")}
+                    {...register("email", {
+                      required: "Email is required",
+                      maxLength: {
+                        value: 30,
+                        message: "Email is too long.",
+                      },
+                    })}
                     required
                     type="email"
                   />
+                  {errors.email && toast.error(errors.email.message)}
                   <Label className="mt-2">Enter Your Password</Label>
-                  <Input className="mt-2" {...register("password")} required />
+                  <Input
+                    className="mt-2"
+                    {...register("password", {
+                      required: "Password is required",
+                      pattern: {
+                        value:
+                          /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                        message:
+                          "Password must be at least 8 characters long and include an uppercase letter, a number, and a special character",
+                      },
+                    })}
+                    required
+                  />
+                  {errors.password && toast.error(errors.password.message)}
                   <Label className="mt-2">Enter Your Confirm Password</Label>
                   <Input
                     className="mt-2"

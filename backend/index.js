@@ -14,7 +14,7 @@ const _dirname = path.resolve();
 // Middlewares
 app.use(
   cors({
-    origin: "https://doc-shelf.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );

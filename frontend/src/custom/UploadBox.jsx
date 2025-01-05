@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { useFileStore } from "@/store/useFileStore";
 import { useThemeStore } from "@/store/useThemeStore";
+import toast from "react-hot-toast";
 
 const UploadBox = () => {
   const { theme } = useThemeStore();
@@ -52,10 +53,14 @@ const UploadBox = () => {
             className="flex flex-col items-center"
           >
             <Input
-              {...register("filename")}
+              {...register("filename", {
+                required: "Filename is required",
+                maxLength: { value: 25, message: "Filename is too long." },
+              })}
               className="mt-4"
               placeholder="Set Your File Name"
             />
+            {errors.filename && toast.error(errors.filename.message)}
             <Input
               {...register("file")}
               className="mt-8"
