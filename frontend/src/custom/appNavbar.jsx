@@ -1,7 +1,13 @@
 import React from "react";
+
+// Pic Import
 import avatar from "../assets/avatar.jpg";
+
+// Components Import
 import { SunMoon } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+// Store Import
 import { useViewStore } from "@/store/useViewStore";
 import { useAuthStore } from "@/store/useAuthStore";
 import { useThemeStore } from "@/store/useThemeStore";

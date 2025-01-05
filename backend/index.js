@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import cookieparser from "cookie-parser";
 import { connect } from "./Database/connect.js";
-import path from 'path'
+import path from "path";
 
 // Routes
 import { userRouter } from "./Routes/userRoute.js";
@@ -30,10 +30,10 @@ connect();
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/document", documentRouter);
 
-app.use(express.static(path.join(_dirname,"/frontend/dist")))
-app.get("*",(req,res)=>{
-  res.sendFile(path.resolve(_dirname,"frontend","dist","index.html"));
-})
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Port started on ${port}`);

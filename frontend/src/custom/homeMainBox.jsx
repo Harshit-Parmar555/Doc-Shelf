@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
+
+// Components Import
 import File from "./File";
 import { Loader } from "lucide-react";
+
+// Store Import
 import { useFileStore } from "@/store/useFileStore";
 import { useThemeStore } from "@/store/useThemeStore";
 const MainBox = () => {

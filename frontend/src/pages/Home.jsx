@@ -11,10 +11,14 @@ import ReceivedBox from "@/custom/ReceivedBox";
 import { useViewStore } from "@/store/useViewStore";
 import { useThemeStore } from "@/store/useThemeStore";
 const Home = () => {
-  const {theme} = useThemeStore();
+  const { theme } = useThemeStore();
   const { selectedComponent } = useViewStore();
   return (
-    <div className={`h-screen w-screen ${theme?"bg-white":"bg-black"} transition-colors duration-500 ease-in-out`}>
+    <div
+      className={`h-screen w-screen ${
+        theme ? "bg-white" : "bg-black"
+      } transition-colors duration-500 ease-in-out`}
+    >
       <Navbar />
       <div className="h-[88%] w-full max-w-full flex flex-col items-center">
         <SideBar />

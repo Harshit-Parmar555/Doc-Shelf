@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  File as FileIcon,
-  Delete,
-  Download,
-  EllipsisVertical,
-} from "lucide-react";
+import { File as FileIcon, Download } from "lucide-react";
 import { formatMongoDate } from "@/lib/date";
 import { useFileStore } from "@/store/useFileStore";
 import DeleteDialog from "./DeleteDialog";

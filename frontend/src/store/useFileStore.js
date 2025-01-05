@@ -2,6 +2,9 @@ import { axiosInstance } from "@/lib/axios";
 import { create } from "zustand";
 import { toast } from "react-hot-toast";
 import { data } from "react-router-dom";
+
+// File Store
+
 export const useFileStore = create((set) => ({
   fetching: false,
   documents: [],
@@ -46,4 +49,5 @@ export const useFileStore = create((set) => ({
       set({ deleting: false });
     }
   },
+
 }));

@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
-
 // Pages Import
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-
+// Store Import
 import { useAuthStore } from "./store/useAuthStore";
-
+// Components Import
 import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
+
 const App = () => {
   const { checkAuth, checkingAuth, authUser } = useAuthStore();
 
@@ -50,7 +50,7 @@ const App = () => {
           element={<>{authUser ? <Home /> : <Navigate to="/landing" />}</>}
         />
       </Routes>
-      <Toaster/>
+      <Toaster />
     </BrowserRouter>
   );
 };

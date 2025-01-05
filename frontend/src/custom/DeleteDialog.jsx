@@ -1,3 +1,4 @@
+// Components Import
 import {
   Dialog,
   DialogTrigger,
@@ -10,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Trash2 } from "lucide-react";
 import { useState } from "react";
 
+// Store Import
 import { useFileStore } from "@/store/useFileStore";
 
 export default function DeleteDialog(props) {

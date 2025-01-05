@@ -88,7 +88,6 @@ export const login = async (req, res) => {
       user: senduser,
     });
   } catch (error) {
-
     return res.status(500).send({
       success: false,
       message: "Error in login controller",
@@ -143,19 +142,16 @@ export const updateprofile = async (req, res) => {
     const url = await getDownloadURL(storageref);
     fs.unlinkSync(profile.path);
 
-    const user = await userModel.findByIdAndUpdate(
-      req.user._id,
-      { profile: url },
-      { new: true }
-    ).select("-password");
+    const user = await userModel
+      .findByIdAndUpdate(req.user._id, { profile: url }, { new: true })
+      .select("-password");
 
     return res.status(200).send({
       success: true,
       message: "Profile Updated Successfully",
-      user:user
+      user: user,
     });
   } catch (error) {
-
     return res.status(500).send({
       success: false,
       message: "Error in update profile controller",

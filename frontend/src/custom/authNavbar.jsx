@@ -1,7 +1,7 @@
 import React from "react";
+
 // Components Import
 import { Button } from "@/components/ui/button";
-
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

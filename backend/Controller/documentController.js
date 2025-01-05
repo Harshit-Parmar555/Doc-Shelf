@@ -92,7 +92,7 @@ export const deletefile = async (req, res) => {
     return res.status(200).send({
       success: true,
       message: "File deleted successfully",
-      deleted : deleteddocument
+      deleted: deleteddocument,
     });
   } catch (error) {
     return res.status(500).send({
@@ -117,5 +117,3 @@ export const fetchfile = async (req, res) => {
     });
   }
 };
-
-

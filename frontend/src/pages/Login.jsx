@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 // Picture Import
 import SidePic from "../assets/auth.png";
 
+// Store Import
 import { useAuthStore } from "@/store/useAuthStore";
 const Login = () => {
   const { logging, login } = useAuthStore();
@@ -73,7 +74,7 @@ const Login = () => {
           <div className="w-[350px] ml-8 hidden md:flex">
             <img
               src={SidePic}
-              alt=""
+              alt="Side Pic"
               className="h-full w-full object-contain rounded-lg invert"
             />
           </div>
